@@ -36,7 +36,7 @@ use common\modules\attachment\widgets\SingleWidget;
                         <?= $form->field($moduleModel, $attribute)->widget(\common\widgets\dynamicInput\DynamicInputWidget::className(), ['type' => $moduleModel->getAttributeType($attribute), 'data' => $moduleModel->getAttributeItems($attribute), 'options' => $moduleModel->getAttributeOptions($attribute)]) ?>
                     <?php endforeach; ?>
 
-                    <?= $form->boxField($model, 'meta', ["collapsed" => true])->widget(MetaForm::className())->header("SEO"); ?>
+                    <?= $form->boxField($model, 'meta', ["collapsed" => false])->widget(MetaForm::className())->header("SEO"); ?>
 
                 </div>
 

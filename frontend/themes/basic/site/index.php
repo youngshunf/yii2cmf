@@ -17,7 +17,7 @@ use common\models\Article;
         <div class="row">
             <?php if ($this->beginCache('category-article-list', ['dependency' => ['class' => 'yii\caching\DbDependency', 'sql' => "SELECT MAX(updated_at) FROM {{%article}}"]])): ?>
         <?php foreach ($categories as $category):?>
-            <div class="col-md-6">
+            <div class="col-md-12">
                 <div class="panel panel-default">
                     <div class="panel-heading">
                         <h3 class="panel-title"><span class="glyphicon glyphicon-list" aria-hidden="true" style="margin-right: 10px"></span><?= $category->title ?></h3>
@@ -46,19 +46,8 @@ use common\models\Article;
             "headerClass"=>"panel-heading",
             "bodyClass"=>"panel-body",
         ])?>
-        <div class="panel panel-success">
-            <div class="panel-heading">
-                <h5 class="panel-title">热门教程</h5>
-            </div>
-            <div class="panel-body">
-                <ul class="post-list">
-                    <?php $books = \common\modules\book\models\Book::find()->orderBy('view desc')->limit(5)->all();foreach($books as $book): ?>
-                        <li><a href="<?= Url::to(['/book/default/view', 'id' => $book->id]) ?>" title="<?= $book->book_name ?>" target="_blank"><?= $book->book_name ?></a></li>
-                    <?php endforeach; ?>
-                </ul>
-            </div>
-        </div>
-        <div class="panel panel-success">
+        
+        <div class="panel panel-default">
             <div class="panel-heading">
                 <h5 class="panel-title">热门标签</h5>
             </div>
@@ -70,7 +59,7 @@ use common\models\Article;
                 </ul>
             </div>
         </div>
-        <div class="panel panel-success">
+        <div class="panel panel-default">
             <div class="panel-heading">
                 <h5 class="panel-title">推荐内容</h5>
             </div>
@@ -85,7 +74,7 @@ use common\models\Article;
                 </ul>
             </div>
         </div>
-        <div class="panel panel-success">
+        <div class="panel panel-default">
             <div class="panel-heading">
                 <h5 class="panel-title">活跃用户</h5>
             </div>

@@ -46,5 +46,10 @@ return [
         'pluginManager' => [
             'class' => 'common\components\PluginManager',
         ],
+        'urlManager' =>[
+            'enablePrettyUrl' => true,
+            'showScriptName' => false,
+        ],
     ],
+    
 ];

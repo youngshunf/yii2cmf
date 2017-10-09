@@ -28,7 +28,7 @@ use common\models\Category;
 
         <?= $form->field($model, 'allow_publish')->radioList($model::getAllowPublishEnum()) ?>
 
-        <?= $form->boxField($model, 'meta',["collapsed"=>true])->widget(MetaForm::className())->header("SEO"); ?>
+        <?= $form->boxField($model, 'meta',["collapsed"=>false])->widget(MetaForm::className())->header("SEO"); ?>
 
         <div class="form-group">
             <?= Html::submitButton($model->isNewRecord ? '创建' : '更新', ['class' => $model->isNewRecord ? 'btn btn-success btn-flat btn-block' : 'btn btn-primary btn-flat btn-block']) ?>
